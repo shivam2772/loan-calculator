@@ -93,7 +93,7 @@ class Home extends React.PureComponent {
     }
     return (
       <div className={styles.totalPayable}>
-        <span style={{ textAlign: 'center'}}>Total Paybale Amount</span>
+        <span style={{ textAlign: 'center'}}>Total Payabale Amount</span>
         <span className={styles.totalAmount}>${totalPayableAmount}</span>
       </div>
     );
