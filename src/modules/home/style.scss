@@ -1,0 +1,59 @@
+.amountValue {
+  text-align: center;
+  font-size: 30px;
+}
+
+.slider {
+  width: 90%;
+  margin: auto;
+
+  @media only screen and (min-width: 1024px) {
+    width: 60%;
+  }
+
+  @media only screen and(min-width: 767px) and (max-width: 1023px) {
+    width: 80%;
+  }
+}
+
+.detailDisplay {
+  display: flex;
+  justify-content: center;
+  margin-top: 80px;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  padding: 10px;
+}
+
+.selector {
+  margin: auto;
+  width: 30%;
+}
+
+.totalPayable {
+  width: 20%;
+  margin: auto;
+  margin-top: 20px;
+  border-radius: 5px;
+  height: 61px;
+  display: flex;
+  justify-content: center;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.totalAmount {
+  margin: auto;
+  font-size: 30px;
+}
+
+.error {
+  border-radius: 5px;
+  width: 50%;
+  border: 1px solid #d47d7d;
+  margin: auto;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+}
