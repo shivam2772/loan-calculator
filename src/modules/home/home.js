@@ -10,7 +10,8 @@ class Home extends React.PureComponent {
       value: 500,
       selectedOption: null,
       amountPerMonth: 0,
-      error: false
+      error: false,
+      interestRate: 0
     };
     this.renderDetailsDisplay = this.renderDetailsDisplay.bind(this);
     this.handleSliderChange = this.handleSliderChange.bind(this);
@@ -27,7 +28,7 @@ class Home extends React.PureComponent {
       method: 'get',
       url: '/interest?amount=500&numMonths=6'
     }).then(res => {
-      this.setState({ amountPerMonth: res.data.monthlyPayment.amount });
+      this.setState({ amountPerMonth: res.data.monthlyPayment.amount, interestRate: res.data.interestRate });
     });
   }
 
@@ -46,7 +47,7 @@ class Home extends React.PureComponent {
         method: 'get',
         url: `/interest?amount=${value}&numMonths=${selectedOption.value}`
       }).then(res => {
-        this.setState({ amountPerMonth: res.data.monthlyPayment.amount });
+        this.setState({ amountPerMonth: res.data.monthlyPayment.amount, interestRate: res.data.interestRate });
       });
     } else {
       this.setState({ error: true });
@@ -99,7 +100,7 @@ class Home extends React.PureComponent {
   }
 
   render() {
-    const { value, selectedOption, amountPerMonth, error } = this.state;
+    const { value, selectedOption, amountPerMonth, error, interestRate } = this.state;
     return(
       <div className="home">
         { error ? this.renderError() : null}
@@ -110,6 +111,9 @@ class Home extends React.PureComponent {
           handleDropdownChange={this.handleDropdownChange}
           handleSliderChange={this.handleSliderChange}
         />
+        <div className={styles.interestRate}>
+          <span>INTEREST RATE: {interestRate}</span>
+        </div>
         {this.renderDetailsDisplay()}
         {amountPerMonth ? this.renderTotalPayableAmount() : null}
       </div>

@@ -20,7 +20,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-top: 80px;
+  margin-top: 25px;
 
   @media only screen and(min-width: 767px) {
     flex-direction: row;
@@ -88,5 +88,16 @@
 .lastcard {
   @media only screen and(min-width: 1023px) {
     margin-left: 10px;
+  }
+}
+
+.interestRate {
+  text-align: center;
+  margin-top: 20px;
+  > span {
+    padding: 10px;
+    border: 1px solid green;
+    border-radius: 5px;
+    font-size: 12px;
   }
 }
