@@ -70,11 +70,13 @@ class Home extends React.PureComponent {
     const { amountPerMonth, selectedOption } = this.state;
     return (
       <div className={styles.detailDisplay}>
-        <div>
-          <span className={styles.card}>{ selectedOption ===null ? '4 months' : selectedOption.value + 'months'}</span>
+        <div className={styles.card}>
+          <span style={{fontSize: '10px', paddingBottom: '10px'}}>PAY IT BACK OVER</span>
+          <span style={{ fontSize: '20px'}}>{ selectedOption ===null ? '4 months' : selectedOption.value + 'months'}</span>
         </div>
-        <div>
-          <span className={styles.card} style={{marginLeft: '2px'}}>${amountPerMonth}</span>
+        <div className={`${styles.card} ${styles.lastcard}`}>
+          <span style={{ fontSize: '10px', paddingBottom: '10px'}}>MONTHLY PAYMENT</span>
+          <span style={{ fontSize: '20px'}}>${amountPerMonth}</span>
         </div>
       </div>
     );
@@ -86,10 +88,11 @@ class Home extends React.PureComponent {
     if(selectedOption !== null && amountPerMonth !== 0) {
       totalPayableAmount = amountPerMonth*selectedOption.value;
     } else {
-      totalPayableAmount = amountPerMonth*4;
+      totalPayableAmount = amountPerMonth*6;
     }
     return (
       <div className={styles.totalPayable}>
+        <span style={{ textAlign: 'center'}}>Total Paybale Amount</span>
         <span className={styles.totalAmount}>${totalPayableAmount}</span>
       </div>
     );

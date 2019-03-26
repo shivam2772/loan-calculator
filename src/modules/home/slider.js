@@ -44,7 +44,6 @@ class AmountSlider extends React.PureComponent {
   handelChangeComplete() {
     // make api call to fetch data
     this.props.handelChangeComplete();
-    console.log('22222: ', this.state.value);
 
   }
 
