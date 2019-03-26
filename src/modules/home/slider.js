@@ -14,7 +14,7 @@ const options = [];
 for(let i=6; i< 25; i++) {
   const obj = {};
   obj.value = i;
-  obj.label = i;
+  obj.label = i + ' months';
   options.push(obj);
 }
 
