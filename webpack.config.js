@@ -9,7 +9,6 @@ module.exports = {
     filename: 'index_bundle.js',
     publicPath: '/'
   },
-  devtool: 'source-map',
   devServer: {
     historyApiFallback: true,
     port: 3000
